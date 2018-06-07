@@ -43,17 +43,17 @@ $descriptorspec = array(
 
 $process = proc_open($cmd, $descriptorspec, $pipes, realpath('./'), array());
 
-echo "COMMAND: " . $cmd . "\n";
+echo "COMMAND: $cmd\n";
 echo "TIMESTAMP: " . date("H:i:s d/m/Y") . "\n\n";
 
 if (is_resource($process)) {
+  fwrite($pipes[0]);
+  fclose($pipes[0]);
   echo stream_get_contents($pipes[1]);
   echo stream_get_contents($pipes[2]);
+  fclose($pipes[1]);
+  fclose($pipes[2]);
+  $return_value = proc_close($process);
+  echo "\nRETURN VALUE: $return_value";
 }
-
-fclose($pipes[0]);
-fclose($pipes[1]);
-fclose($pipes[2]);
-
-proc_close($process);
 ?>
