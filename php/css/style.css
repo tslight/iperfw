@@ -1,0 +1,36 @@
+body {
+  height: 100%;
+  margin: 0 auto;
+  background: #e4e6e9;
+  padding-bottom: 50px;
+}
+
+h1 {
+  font: 26px/28px 'roboto-cond-reg', Arial, Helvetica, sans-serif;
+  color: #1c1c1c;
+  text-transform: uppercase;
+  padding-top: 50px;
+}
+
+.row {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.column {
+  float: left;
+}
+
+.left {
+  width: 30%;
+}
+
+.right {
+  width: 70%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
