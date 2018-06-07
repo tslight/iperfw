@@ -2,17 +2,6 @@
 /* Increase PHP max execution time to allow for longer tests. */
 set_time_limit(500);
 
-// Turn off output buffering
-ini_set('output_buffering', 'off');
-// Turn off PHP output compression
-ini_set('zlib.output_compression', false);
-// Implicitly flush the buffer(s)
-ini_set('implicit_flush', true);
-
-/* https://stackoverflow.com/questions/1281140/run-process-with-realtime-output-in-php */
-ob_end_flush();
-ob_implicit_flush(true);
-
 $type = (!empty($_REQUEST['type'])) ? $_REQUEST['type'] : 'iperf';
 
 switch ($type) {
@@ -27,13 +16,13 @@ switch ($type) {
     $cmd     = escapeshellcmd($prog . $args);
     break;
   case "ping" :
-    $prog = 'ping';
+    $prog    = 'ping';
     $target  = (!empty($_REQUEST['target'])) ? $_REQUEST['target'] : '8.8.8.8';
     $params  = (!empty($_REQUEST['params'])) ? $_REQUEST['params'] : '-c 4';
     $cmd     = escapeshellcmd($prog . ' ' . $params . ' ' . $target);
     break;
   case "traceroute" :
-    $prog = 'traceroute';
+    $prog    = 'traceroute';
     $target  = (!empty($_REQUEST['target'])) ? $_REQUEST['target'] : '8.8.8.8';
     $params  = (!empty($_REQUEST['params'])) ? $_REQUEST['params'] : NULL;
     $cmd     = escapeshellcmd($prog . ' ' . $params . ' ' . $target);
@@ -62,4 +51,7 @@ if (is_resource($process)) {
   $return_value = proc_close($process);
   echo "\nRETURN VALUE: $return_value";
 }
+
+ob_flush();
+flush();
 ?>
