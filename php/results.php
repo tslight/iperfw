@@ -2,9 +2,15 @@
 /* Increase PHP max execution time to allow for longer tests. */
 set_time_limit(500);
 
+// Turn off output buffering
+ini_set('output_buffering', 'off');
+// Turn off PHP output compression
+ini_set('zlib.output_compression', false);
+// Implicitly flush the buffer(s)
+ini_set('implicit_flush', true);
+
 /* https://stackoverflow.com/questions/1281140/run-process-with-realtime-output-in-php */
 ob_end_flush();
-ini_set("output_buffering", "0");
 ob_implicit_flush(true);
 
 $type = (!empty($_REQUEST['type'])) ? $_REQUEST['type'] : 'iperf';
