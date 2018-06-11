@@ -29,29 +29,29 @@ switch ($type) {
     break;
 }
 
-/* https://secure.php.net/manual/en/function.proc-open.php */
-$descriptorspec = array(
-  0 => array("pipe", "r"),   // stdin is a pipe that the child will read from
-  1 => array("pipe", "w"),   // stdout is a pipe that the child will write to
-  2 => array("pipe", "w")    // stderr is a pipe that the child will write to
-);
+while (@ ob_end_flush()); // end all output buffers if any
+ob_implicit_flush(true);  // turn on implicit flushing
 
-$process = proc_open($cmd, $descriptorspec, $pipes, realpath('./'), array());
+$date = date("Y-m-d");
+$timestamp = date("H:i:s d/m/Y");
+$log = fopen("/var/www/html/logs/$date.log", "a+") or die("Unable to open file!");
+$proc = popen($cmd, 'r');
 
 echo "COMMAND: $cmd\n";
-echo "TIMESTAMP: " . date("H:i:s d/m/Y") . "\n\n";
+echo "TIMESTAMP: $timestamp\n\n";
 
-if (is_resource($process)) {
-  fwrite($pipes[0]);
-  fclose($pipes[0]);
-  echo stream_get_contents($pipes[1]);
-  echo stream_get_contents($pipes[2]);
-  fclose($pipes[1]);
-  fclose($pipes[2]);
-  $return_value = proc_close($process);
-  echo "\nRETURN VALUE: $return_value";
+fwrite ($log, "\nCOMMAND: $cmd\n");
+fwrite ($log, "TIMESTAMP: $timestamp\n\n");
+
+while (!feof($proc))
+{
+  $output = fread($proc, 4096);
+  echo $output;
+  fwrite($log, $output);
 }
 
-ob_flush();
-flush();
+fwrite ($log, "\n");
+
+fclose($log);
+fclose($proc);
 ?>
