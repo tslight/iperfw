@@ -5,8 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Speedtest Utils</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script type="text/javascript" src="js/jquery-3.2.0.slim.min.js"></script>
-    <script type="text/javascript" src="js/form.js"></script>
+    <!-- <script type="text/javascript" src="js/jquery-3.2.0.slim.min.js"></script> -->
+    <!-- <script type="text/javascript" src="js/form.js"></script> -->
   </head>
 
   <body>
@@ -16,7 +16,7 @@
       <div class="column left">
 
 	<h1>Iperf</h1>
-	<form id="formx" method="post" action="results.php" target="iframex">
+	<form id="formx" method="post" action="results.php" target="results">
 	  <input id="typex" name="type" type="hidden" value="iperf"/>
 	  <table>
 	    <tr>
@@ -32,7 +32,7 @@
 	    </tr>
 	    <tr>
 	      <td>
-		<label for="target" class="label">Server</label>
+		<label for="target" class="label">Target</label>
 	      </td>
 	      <td>
 		<input id="target" name="target" type="text" maxlength="255" value="ping.online.net"/>
@@ -48,7 +48,7 @@
 	    </tr>
 	    <tr>
 	      <td>
-		<label for="type" class="label">Type</label>
+		<label for="type" class="label">Protocol</label>
 	      </td>
 	      <td>
 		<select id="proto" name="proto">
@@ -83,7 +83,7 @@
 	</form>
 
 	<h1>Ping</h1>
-	<form id="formy" method="post" action="results.php" target="iframex">
+	<form id="formy" method="post" action="results.php" target="results">
 	  <input id="typex" name="type" type="hidden" value="ping"/>
 	  <table>
 	    <tr>
@@ -103,15 +103,15 @@
 	      </td>
 	    </tr>
 	    <td></td>
-	      <td>
-		<input type="submit" name="Start" value="Start" />
-	      </td>
+	    <td>
+	      <input type="submit" name="Start" value="Start" />
+	    </td>
 	    </tr>
 	  </table>
 	</form>
 
 	<h1>Traceroute</h1>
-	<form id="formy" method="post" action="results.php" target="iframex">
+	<form id="formy" method="post" action="results.php" target="results">
 	  <input id="typex" name="type" type="hidden" value="traceroute"/>
 	  <table>
 	    <tr>
@@ -142,9 +142,8 @@
       </div>
 
       <div class="column right">
-	<h1>Results</h1>
-	<pre id="dynamic"></pre>
-	<iframe id="iframex" name="iframex" style="display:none" ></iframe>
+	<h1>Results:</h1>
+	<iframe id="results" name="results"></iframe>
       </div>
 
     </div>
