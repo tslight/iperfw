@@ -3,7 +3,7 @@
 
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Speedtest Utils</title>
+    <title>SPEEDTEST UTILS</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <!-- <script type="text/javascript" src="js/jquery-3.2.0.slim.min.js"></script> -->
     <!-- <script type="text/javascript" src="js/form.js"></script> -->
@@ -15,8 +15,8 @@
 
       <div class="column left">
 
-	<h1>Iperf</h1>
-	<form id="formx" method="post" action="results.php" target="results">
+	<h1>IPERF</h1>
+	<form method="post" action="results.php" target="results">
 	  <input id="typex" name="type" type="hidden" value="iperf"/>
 	  <table>
 	    <tr>
@@ -82,8 +82,8 @@
 	  </table>
 	</form>
 
-	<h1>Ping</h1>
-	<form id="formy" method="post" action="results.php" target="results">
+	<h1>PING</h1>
+	<form method="post" action="results.php" target="results">
 	  <input id="typex" name="type" type="hidden" value="ping"/>
 	  <table>
 	    <tr>
@@ -110,8 +110,8 @@
 	  </table>
 	</form>
 
-	<h1>Traceroute</h1>
-	<form id="formy" method="post" action="results.php" target="results">
+	<h1>TRACEROUTE</h1>
+	<form method="post" action="results.php" target="results">
 	  <input id="typex" name="type" type="hidden" value="traceroute"/>
 	  <table>
 	    <tr>
@@ -139,11 +139,13 @@
 	  </table>
 	</form>
 
+	<br><p><a href="logs/">ALL RESULTS</a></p>
+
       </div>
 
       <div class="column right">
-	<h1>Results:</h1>
-	<iframe id="results" name="results"></iframe>
+	<h1>RESULT:</h1>
+	<iframe marginwidth="0" id="results" name="results"></iframe>
       </div>
 
     </div>

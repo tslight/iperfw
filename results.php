@@ -53,12 +53,12 @@ while (!feof($proc))
 
 echo "</pre>";
 
-echo "<h1>Logs:</h1>";
+echo "<br><h2 style='font-family: Arial, Helvetica, Sans-Serif;'>RECENT RESULTS:</h2>";
 $path  = 'logs/';
 $files = scandir($path);
 $files = array_diff(scandir($path,1), array('.', '..'));
-foreach ($files as $file) {
-  echo "<p><a href='logs/$file'>$file</a></p>";
+for ($i=0; $i<10; $i++) {
+  echo "<p><a href='logs/$files[$i]'>$files[$i]</a></p>";
 }
 
 fclose($log);
