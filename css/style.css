@@ -15,10 +15,14 @@ h1, h2 {
   text-transform: uppercase;
 }
 
+pre {
+  font-family: Monospace;
+}
+
 .row {
   padding-left: 100px;
   padding-right: 100px;
-  width: 100%;
+  clear: both;
 }
 
 .column {
@@ -31,10 +35,4 @@ h1, h2 {
 
 .right {
   width: 70%;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
 }
