@@ -145,7 +145,11 @@
     <div class="row">
       <div class="column left">
 	<h1>LOGS</h1>
-	<?php getLogs()	?>
+	<table>
+	  <tr>
+	    <?php getLogs() ?>
+	  </tr>
+	</table>
 	<p><a href="logs/">Show all logs...</a></p>
       </div>
 

@@ -95,10 +95,10 @@ function getLogs () {
   $files = array_diff(scandir($path,1), array('.', '..'));
   foreach ($files as $file) {
     if ($count < 10) {
-      echo "<p>
-	    <a href='?link=$file'>$file</a>&nbsp;&nbsp;&nbsp;
-	    <a href='logs/$file' download><i>Download</i></a>
-	    </p>";
+      echo "<tr>
+		<td><a href='?link=$file'>$file</a>&nbsp;&nbsp;&nbsp;</td>
+		<td><a href='logs/$file' download><i>Download</i></a></td>
+	    </tr>";
     }
     $count++;
   }
