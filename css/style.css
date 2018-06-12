@@ -19,6 +19,17 @@ pre {
   font-family: Monospace;
 }
 
+label {
+  clear:both;
+  float: left;
+  width: 6em;
+  text-align: left;
+}
+
+input, textarea {
+  text-align: left;
+}
+
 .row {
   padding-left: 100px;
   padding-right: 100px;
