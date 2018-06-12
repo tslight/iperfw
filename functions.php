@@ -1,7 +1,6 @@
 <?php
 
 function disableOutputBuffering () {
-  header('Content-Type: text/event-stream');
   header('Cache-Control: no-cache');
   header('X-Accel-Buffering: no');
 
@@ -26,14 +25,14 @@ function disableOutputBuffering () {
   }
 }
 
-function runCmd ($cmd) {
+function runCmd ($type, $cmd) {
   disableOutputBuffering();
-
-  $log = fopen("logs/$date.$type.log", "a+") or die("Unable to open file!");
-  $proc = popen($cmd, 'r');
 
   $date = date("Y-m-d_H-i-s");
   $timestamp = date("H:i:s d/m/Y");
+
+  $log = fopen("logs/$date.$type.log", "w") or die("Unable to open file!");
+  $proc = popen("$cmd 2>&1", 'r');
 
   echo "<pre>";
 
@@ -68,7 +67,7 @@ function getResults () {
 	$port    = (!empty($_REQUEST['port'])) ? $_REQUEST['port'] : NULL;
 	$proto   = ($_REQUEST['proto']=='udp') ? ' -u ' : ' ';
 	$params  = (!empty($_REQUEST['params'])) ? $_REQUEST['params'] : NULL;
-	$prog    = ($version == 2) ? 'iperf' : NULL;
+	$prog    = ($version == 2) ? 'iperf' : 'iperf3';
 	$args    = $proto . '-c ' . $target . ' -p ' . $port . ' ' . $params;
 	$cmd     = escapeshellcmd($prog . $args);
 	break;
@@ -85,19 +84,23 @@ function getResults () {
 	$cmd     = escapeshellcmd($prog . ' ' . $params . ' ' . $target);
 	break;
     }
-    runCmd($cmd);
+    runCmd($type, $cmd);
   }
 }
 
 function getLogs () {
+  $count = 0;
   $path  = 'logs/';
   $files = scandir($path);
   $files = array_diff(scandir($path,1), array('.', '..'));
-  for ($i=0; $i<10; $i++) {
-    echo "<p>
-	    <a href='?link=$files[$i]'>$files[$i]</a>&nbsp;&nbsp;&nbsp;
-	    <a href='logs/$files[$i]' download><i>Download</i></a>
-	 </p>";
+  foreach ($files as $file) {
+    if ($count < 10) {
+      echo "<p>
+	    <a href='?link=$file'>$file</a>&nbsp;&nbsp;&nbsp;
+	    <a href='logs/$file' download><i>Download</i></a>
+	    </p>";
+    }
+    $count++;
   }
 }
 
