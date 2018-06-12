@@ -1,5 +1,8 @@
 <?php
 set_time_limit(0);   // set to maximum to allow for long tests.
+while (@ ob_end_flush()); flush(); // end all output buffers if any
+ini_set("output_buffering", "0");  // belt & braces!
+ob_implicit_flush(true);           // turn on implicit flushing
 
 $type = (!empty($_REQUEST['type'])) ? $_REQUEST['type'] : 'iperf';
 
@@ -27,9 +30,6 @@ switch ($type) {
     $cmd     = escapeshellcmd($prog . ' ' . $params . ' ' . $target);
     break;
 }
-
-while (@ ob_end_flush()); flush(); // end all output buffers if any
-ob_implicit_flush(true);           // turn on implicit flushing
 
 $date = date("Y-m-d_H-i-s");
 $timestamp = date("H:i:s d/m/Y");

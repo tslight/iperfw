@@ -7,29 +7,18 @@ html, body {
   margin: 0px;
   background: #e4e6e9;
   padding-left: 0px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
+}
+
+h1, h2 {
+  padding-top: 30px;
   text-transform: uppercase;
-}
-
-h1 {
-  padding-top: 50px;
-}
-
-iframe {
-  overflow: hidden;
-  outline: 0px;
-  border: 0px;
-  padding: 0px;
-  margin: 0px;
-  display: inline-block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
 }
 
 .row {
   padding-left: 100px;
   padding-right: 100px;
+  width: 100%;
 }
 
 .column {
