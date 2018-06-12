@@ -81,58 +81,27 @@
 	<h1>PING</h1>
 	<form method="post">
 	  <input name="type" type="hidden" value="ping"/>
-	  <table>
-	    <tr>
-	      <td>
-		<label for="target" class="label">Target</label>
-	      </td>
-	      <td>
-		<input id="target" name="target" type="text" maxlength="255" value="8.8.8.8"/>
-	      </td>
-	    </tr>
-	    <tr>
-	      <td>
-		<label for="params" class="label">Parameters</label>
-	      </td>
-	      <td>
-		<input id="params" name="params" type="text" maxlength="255" value="-c 4"/>
-	      </td>
-	    </tr>
-	    <td></td>
-	    <td>
-	      <input type="submit" name="Start" value="Start" />
-	    </td>
-	    </tr>
-	  </table>
+
+	  <label for="target" class="label">Target:</label>
+	  <input id="target" name="target" type="text" maxlength="255" value="8.8.8.8"/>
+
+	  <label for="params" class="label">Parameters:</label>
+	  <input id="params" name="params" type="text" maxlength="255" value="-c 4"/>
+
+	  <input type="submit" name="Start" value="Start" />
 	</form>
 
 	<h1>TRACEROUTE</h1>
 	<form method="post"">
 	  <input name="type" type="hidden" value="traceroute"/>
-	  <table>
-	    <tr>
-	      <td>
-		<label for="target" class="label">Target</label>
-	      </td>
-	      <td>
-		<input id="target" name="target" type="text" maxlength="255" value="8.8.8.8"/>
-	      </td>
-	    </tr>
-	    <tr>
-	      <td>
-		<label for="params" class="label">Parameters</label>
-	      </td>
-	      <td>
-		<input id="params" name="params" type="text" maxlength="255" value=""/>
-	      </td>
-	    </tr>
-	    <tr>
-	      <td></td>
-	      <td>
-		<input type="submit" name="Start" value="Start" />
-	      </td>
-	    </tr>
-	  </table>
+
+	  <label for="target" class="label">Target:</label>
+	  <input id="target" name="target" type="text" maxlength="255" value="8.8.8.8"/>
+
+	  <label for="params" class="label">Parameters:</label>
+	  <input id="params" name="params" type="text" maxlength="255" value=""/>
+
+	  <input type="submit" name="Start" value="Start"/>
 	</form>
       </div>
 
