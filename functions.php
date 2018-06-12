@@ -9,14 +9,14 @@ function disableOutputBuffering () {
   ini_set('zlib.output_compression', false);  // Turn off PHP output compression
   ini_set('implicit_flush', true);            // Implicitly flush the buffer(s)
 
-  ob_implicit_flush(true);           // belt and braces!
-  while (@ ob_end_flush()); flush(); // end all output buffers if any
+  ob_implicit_flush(true);                    // belt and braces!
+  while (@ ob_end_flush()); flush();          // end all output buffers if any
 
   // Clear, and turn off output buffering
   while (ob_get_level() > 0) {
-    $level = ob_get_level();             // Get the current level
-    ob_end_clean();                      // End the buffering
-    if (ob_get_level() == $level) break; // If the current level has not changed, abort
+    $level = ob_get_level();                  // Get the current level
+    ob_end_clean();                           // End the buffering
+    if (ob_get_level() == $level) break;      // If the current level has not changed, abort
   }
 
   // Disable apache output buffering/compression
