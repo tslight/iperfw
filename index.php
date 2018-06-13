@@ -43,6 +43,19 @@
 	  <input type="submit" class="submit" name="Start" value="Start"/>
 	</form>
 
+	<h1>NSLOOKUP</h1>
+	<form method="post">
+	  <input name="type" type="hidden" value="nslookup"/>
+
+	  <label for="target">Target:</label>
+	  <input id="target" name="target" type="text" maxlength="255" value="8.8.8.8"/><br>
+
+	  <label for="params">Parameters:</label>
+	  <input id="params" name="params" type="text" maxlength="255" value=""/><br>
+
+	  <input type="submit" class="submit" name="Start" value="Start"/>
+	</form>
+
 	<h1>PING</h1>
 	<form method="post">
 	  <input name="type" type="hidden" value="ping"/>
