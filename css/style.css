@@ -5,7 +5,7 @@
 html, body {
   height: 100%;
   margin: 0px;
-  background: #e4e6e9;
+  background: #eee;
   padding-left: 0px;
   padding-bottom: 30px;
 }
@@ -24,10 +24,32 @@ label {
   float: left;
   width: 6em;
   text-align: left;
+  margin-top: 0.3em;
 }
 
-input, textarea {
+input {
   text-align: left;
+  border-radius: none;
+  margin-top: 0.4em;
+}
+
+select {
+  text-align: left;
+  border-radius: none;
+  margin-top: 0.4em;
+}
+
+input[type=submit] {
+  font-size: 0.75em;
+  font-weight: bold;
+  padding:5px 15px;
+  background:#ccc;
+  margin-left: 8em;
+  margin-top: 0.6em;
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
 }
 
 .row {

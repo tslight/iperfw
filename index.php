@@ -16,31 +16,31 @@
 	<form method="post">
 	  <input name="type" type="hidden" value="iperf"/>
 
-	  <label for="version">Version</label>
+	  <label for="version">Version:</label>
 	  <select id="version" name="version">
 	    <option value="2" selected="selected">2</option>
 	    <option value="3" >3</option>
 	  </select><br>
 
-	  <label for="target">Target</label>
+	  <label for="target">Target:</label>
 	  <input id="target" name="target" type="text" maxlength="255" value="ping.online.net"/><br>
 
-	  <label for="port">Port</label>
+	  <label for="port">Port:</label>
 	  <input id="port" name="port" type="text" maxlength="255" value="5001"/><br>
 
-	  <label for="type">Protocol</label>
+	  <label for="type">Protocol:</label>
 	  <select id="proto" name="proto">
 	    <option value="tcp" selected="selected">TCP</option>
 	    <option value="udp" >UDP</option>
 	  </select><br>
 
-	  <label for="params">Parameters</label>
+	  <label for="params">Parameters:</label>
 	  <input id="params" name="params" type="text" maxlength="255" value="-i 1 -f -m"/><br>
 
-	  <label for="timeout">Timeout</label>
+	  <label for="timeout">Timeout:</label>
 	  <input id="timeout" name="timeout" type="text" maxlength="3" value="15"/><br>
 
-	  <input type="submit" name="Start" value="Start" />
+	  <input type="submit" class="submit" name="Start" value="Start"/>
 	</form>
 
 	<h1>PING</h1>
@@ -53,7 +53,7 @@
 	  <label for="params">Parameters:</label>
 	  <input id="params" name="params" type="text" maxlength="255" value="-c 4"/><br>
 
-	  <input type="submit" name="Start" value="Start" />
+	  <input type="submit" class="submit" name="Start" value="Start"/>
 	</form>
 
 	<h1>TRACEROUTE</h1>
@@ -66,7 +66,7 @@
 	  <label for="params">Parameters:</label>
 	  <input id="params" name="params" type="text" maxlength="255" value=""/><br>
 
-	  <input type="submit" name="Start" value="Start"/>
+	  <input type="submit" class="submit" name="Start" value="Start"/>
 	</form>
       </div>
 
