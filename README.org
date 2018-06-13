@@ -6,6 +6,9 @@ A web based front end to a few essential network testing tools, written in PHP.
 Tested on Ubuntu 18.04 running Apache 2.4 & PHP 7.2 and on a default MAMP
 install.
 
+iperf, iperf3, ping & traceroute need to be installed in a $PATH accessible to
+the apache user (www-data on Ubuntu), on the server, for the tool to work.
+
 #+CAPTION: Screenshot 1
 #+NAME:fig:scrot 0
      [[./img/scrot0.png]]
