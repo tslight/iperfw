@@ -31,7 +31,7 @@
 	  <label for="type">Protocol:</label>
 	  <select id="proto" name="proto">
 	    <option value="tcp" selected="selected">TCP</option>
-	    <option value="udp" >UDP</option>
+	    <option value="udp">UDP</option>
 	  </select><br>
 
 	  <label for="params">Parameters:</label>
