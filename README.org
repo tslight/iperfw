@@ -1,0 +1,10 @@
+#+TITLE: CONNECTION TESTING WEB APPLICATION
+#+AUTHOR: Toby Slight
+
+#+CAPTION: Screenshot 1
+#+NAME:fig:scrot 0
+     [[./img/scrot0.png]]
+
+#+CAPTION: Screenshot 2
+#+NAME:fig:scrot 1
+     [[./img/scrot1.png]]
