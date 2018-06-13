@@ -1,6 +1,8 @@
 #+TITLE: CONNECTION TESTING WEB APPLICATION
 #+AUTHOR: Toby Slight
 
+A web based front end to a few essential network testing written in PHP.
+
 #+CAPTION: Screenshot 1
 #+NAME:fig:scrot 0
      [[./img/scrot0.png]]

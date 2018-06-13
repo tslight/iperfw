@@ -42,7 +42,7 @@ select {
 input[type=submit] {
   font-size: 0.75em;
   font-weight: bold;
-  padding:5px 15px;
+  padding:4px 10px;
   background:#ccc;
   margin-left: 8em;
   margin-top: 0.6em;
