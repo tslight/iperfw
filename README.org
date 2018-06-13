@@ -3,6 +3,9 @@
 
 A web based front end to a few essential network testing tools, written in PHP.
 
+Tested on Ubuntu 18.04 running Apache 2.4 & PHP 7.2 and on a default MAMP
+install.
+
 #+CAPTION: Screenshot 1
 #+NAME:fig:scrot 0
      [[./img/scrot0.png]]
