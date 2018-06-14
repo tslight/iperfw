@@ -54,6 +54,21 @@ function runCmd ($type, $cmd) {
   fclose($proc);
 }
 
+function getCmd ($prog, $args) {
+  if (isset($_POST['cheat'])) {
+    $cmd = escapeshellcmd("curl 'cheat.sh/'".$prog."?qT&style=bw");
+    echo "<h1>$prog cheatsheet</h1>";
+    echo '<pre>';
+    passthru($cmd);
+    echo '</pre>';
+    getLogs();
+    exit;
+  } else if (isset($_POST['start'])) {
+    $cmd = escapeshellcmd($prog . ' ' . $args);
+  }
+  return $cmd;
+}
+
 function getResults () {
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // clear link var so that previous accessed log doesn't load after results
@@ -70,25 +85,28 @@ function getResults () {
 	$params  = (!empty($_REQUEST['params'])) ? $_REQUEST['params'] : NULL;
 	$prog    = ($version == 2) ? 'iperf' : 'iperf3';
 	$args    = $proto . '-c ' . $target . ' -p ' . $port . ' ' . $params;
-	$cmd     = escapeshellcmd($prog . $args);
+	$cmd     = getCmd($prog, $args);
 	break;
       case "nslookup" :
 	$prog    = 'nslookup';
 	$target  = (!empty($_REQUEST['target'])) ? $_REQUEST['target'] : NULL;
 	$params  = (!empty($_REQUEST['params'])) ? $_REQUEST['params'] : NULL;
-	$cmd     = escapeshellcmd($prog . ' ' . $params . ' ' . $target);
+	$args    = $params . ' ' . $target;
+	$cmd     = getCmd($prog, $args);
 	break;
       case "ping" :
 	$prog    = 'ping';
 	$target  = (!empty($_REQUEST['target'])) ? $_REQUEST['target'] : NULL;
 	$params  = (!empty($_REQUEST['params'])) ? $_REQUEST['params'] : NULL;
-	$cmd     = escapeshellcmd($prog . ' ' . $params . ' ' . $target);
+	$args    = $params . ' ' . $target;
+	$cmd     = getCmd($prog, $args);
 	break;
       case "traceroute" :
 	$prog    = 'traceroute';
 	$target  = (!empty($_REQUEST['target'])) ? $_REQUEST['target'] : NULL;
 	$params  = (!empty($_REQUEST['params'])) ? $_REQUEST['params'] : NULL;
-	$cmd     = escapeshellcmd($prog . ' ' . $params . ' ' . $target);
+	$args    = $params . ' ' . $target;
+	$cmd     = getCmd($prog, $args);
 	break;
     }
 
@@ -102,6 +120,7 @@ function getLogs () {
   $path  = 'logs/';
   $files = scandir($path);
   $files = array_diff(scandir($path,1), array('.', '..'));
+  echo "<h1>LOGS</h1><table><tr>";
   foreach ($files as $file) {
     if ($count < 10) {
       echo "<tr>
@@ -111,6 +130,8 @@ function getLogs () {
     }
     $count++;
   }
+  echo "</tr></table>";
+  echo "<p><a href='logs/'>Show all logs...</a></p>";
 }
 
 function getLogContent() {

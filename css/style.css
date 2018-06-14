@@ -52,6 +52,18 @@ input[type=submit] {
   border-radius: 5px;
 }
 
+button {
+  font-size: 0.75em;
+  font-weight: bold;
+  padding:4px 10px;
+  background:#ccc;
+  margin-top: 0.6em;
+  border:0 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
 .row {
   padding-left: 100px;
   padding-right: 100px;

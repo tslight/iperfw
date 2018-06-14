@@ -1,6 +1,6 @@
 <?php require 'functions.php' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>NET UTILS</title>
@@ -19,7 +19,7 @@
 	    <option value="2" selected="selected">2</option>
 	    <option value="3" >3</option>
 	  </select><br>
-	  <label for="target">Target:</label>
+	  <label title="Hostname or IP Address" for="target">Target:</label>
 	  <input id="target" name="target" type="text" maxlength="255" value="ping.online.net"/><br>
 	  <label for="port">Port:</label>
 	  <input id="port" name="port" type="text" maxlength="255" value="5001"/><br>
@@ -32,50 +32,52 @@
 	  <input id="params" name="params" type="text" maxlength="255" value="-i 1 -f -m"/><br>
 	  <label for="timeout">Timeout:</label>
 	  <input id="timeout" name="timeout" type="text" maxlength="3" value="15"/><br>
-	  <input type="submit" class="submit" name="Start" value="Start"/>
+	  <input type="submit" name="start" value="Start"/>
+	  <input type="submit" name="cheat" value="Cheatsheet"/>
+	  <button onclick="window.open('https://iperf.fr/iperf-doc.php');" type="button">Manual</button>
 	</form>
 
 	<h1>NSLOOKUP</h1>
 	<form method="post">
 	  <input name="type" type="hidden" value="nslookup"/>
-	  <label for="target">Target:</label>
+	  <label title="Hostname or IP Address" for="target">Target:</label>
 	  <input id="target" name="target" type="text" maxlength="255" value="8.8.8.8"/><br>
 	  <label for="params">Parameters:</label>
 	  <input id="params" name="params" type="text" maxlength="255" value=""/><br>
-	  <input type="submit" class="submit" name="Start" value="Start"/>
+	  <input type="submit" name="start" value="Start"/>
+	  <input type="submit" name="cheat" value="Cheatsheet"/>
+	  <button onclick="window.open('https://linux.die.net/man/1/nslookup');" type="button">Manual</button>
 	</form>
 
 	<h1>PING</h1>
 	<form method="post">
 	  <input name="type" type="hidden" value="ping"/>
-	  <label for="target">Target:</label>
+	  <label title="Hostname or IP Address" for="target">Target:</label>
 	  <input id="target" name="target" type="text" maxlength="255" value="8.8.8.8"/><br>
 	  <label for="params">Parameters:</label>
 	  <input id="params" name="params" type="text" maxlength="255" value="-c 4"/><br>
-	  <input type="submit" class="submit" name="Start" value="Start"/>
+	  <input type="submit" name="start" value="Start"/>
+	  <input type="submit" name="cheat" value="Cheatsheet"/>
+	  <button onclick="window.open('https://linux.die.net/man/8/ping');" type="button">Manual</button>
 	</form>
 
 	<h1>TRACEROUTE</h1>
 	<form method="post">
 	  <input name="type" type="hidden" value="traceroute"/>
-	  <label for="target">Target:</label>
+	  <label title="Hostname or IP Address" for="target">Target:</label>
 	  <input id="target" name="target" type="text" maxlength="255" value="8.8.8.8"/><br>
 	  <label for="params">Parameters:</label>
 	  <input id="params" name="params" type="text" maxlength="255" value=""/><br>
-	  <input type="submit" class="submit" name="Start" value="Start"/>
+	  <input type="submit" name="start" value="Start"/>
+	  <input type="submit" name="cheat" value="Cheatsheet"/>
+	  <button onclick="window.open('https://linux.die.net/man/8/traceroute');" type="button">Manual</button>
 	</form>
       </div>
 
       <div class="column right">
 	<?php getResults() ?>
 	<?php getLogContent() ?>
-	<h1>LOGS</h1>
-	<table>
-	  <tr>
-	    <?php getLogs() ?>
-	  </tr>
-	</table>
-	<p><a href="logs/">Show all logs...</a></p>
+	<?php getLogs() ?>
       </div>
 
     </div>
