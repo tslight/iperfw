@@ -1,5 +1,4 @@
 <?php
-
 function disableOutputBuffering () {
   header('Cache-Control: no-cache');
   header('X-Accel-Buffering: no');
