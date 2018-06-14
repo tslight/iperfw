@@ -32,9 +32,9 @@
 	  <input id="params" name="params" type="text" maxlength="255" value="-i 1 -f -m"/><br>
 	  <label for="timeout">Timeout:</label>
 	  <input id="timeout" name="timeout" type="text" maxlength="3" value="15"/><br>
-	  <input type="submit" name="start" value="Start"/>
 	  <input type="submit" name="cheat" value="Cheatsheet"/>
 	  <button onclick="window.open('https://iperf.fr/iperf-doc.php');" type="button">Manual</button>
+	  <input type="submit" name="start" value="Run!"/>
 	</form>
 
 	<h1>NSLOOKUP</h1>
@@ -44,9 +44,9 @@
 	  <input id="target" name="target" type="text" maxlength="255" value="8.8.8.8"/><br>
 	  <label for="params">Parameters:</label>
 	  <input id="params" name="params" type="text" maxlength="255" value=""/><br>
-	  <input type="submit" name="start" value="Start"/>
 	  <input type="submit" name="cheat" value="Cheatsheet"/>
 	  <button onclick="window.open('https://linux.die.net/man/1/nslookup');" type="button">Manual</button>
+	  <input type="submit" name="start" value="Run!"/>
 	</form>
 
 	<h1>PING</h1>
@@ -56,9 +56,9 @@
 	  <input id="target" name="target" type="text" maxlength="255" value="8.8.8.8"/><br>
 	  <label for="params">Parameters:</label>
 	  <input id="params" name="params" type="text" maxlength="255" value="-c 4"/><br>
-	  <input type="submit" name="start" value="Start"/>
 	  <input type="submit" name="cheat" value="Cheatsheet"/>
 	  <button onclick="window.open('https://linux.die.net/man/8/ping');" type="button">Manual</button>
+	  <input type="submit" name="start" value="Run!"/>
 	</form>
 
 	<h1>TRACEROUTE</h1>
@@ -68,9 +68,9 @@
 	  <input id="target" name="target" type="text" maxlength="255" value="8.8.8.8"/><br>
 	  <label for="params">Parameters:</label>
 	  <input id="params" name="params" type="text" maxlength="255" value=""/><br>
-	  <input type="submit" name="start" value="Start"/>
 	  <input type="submit" name="cheat" value="Cheatsheet"/>
 	  <button onclick="window.open('https://linux.die.net/man/8/traceroute');" type="button">Manual</button>
+	  <input type="submit" name="start" value="Run!"/>
 	</form>
       </div>
 

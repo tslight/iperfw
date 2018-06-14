@@ -39,25 +39,13 @@ select {
   margin-top: 0.4em;
 }
 
-input[type=submit] {
+input[type=submit], button {
   font-size: 0.75em;
   font-weight: bold;
-  padding:4px 10px;
+  padding:4px 12px;
   background:#ccc;
-  margin-left: 8em;
-  margin-top: 0.6em;
-  border:0 none;
-  cursor:pointer;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-}
-
-button {
-  font-size: 0.75em;
-  font-weight: bold;
-  padding:4px 10px;
-  background:#ccc;
-  margin-top: 0.6em;
+  margin-left: 0.1em;
+  margin-top: 1em;
   border:0 none;
   cursor:pointer;
   -webkit-border-radius: 5px;
