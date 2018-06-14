@@ -57,6 +57,8 @@ function runCmd ($type, $cmd) {
 
 function getResults () {
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // clear link var so that previous accessed log doesn't load after results
+    if (isset($_GET['link'])) { unset($_GET['link']); }
     set_time_limit(0);   // set to maximum to allow for long tests.
     $type = (!empty($_REQUEST['type'])) ? $_REQUEST['type'] : NULL;
 
@@ -90,6 +92,8 @@ function getResults () {
 	$cmd     = escapeshellcmd($prog . ' ' . $params . ' ' . $target);
 	break;
     }
+
+    echo "<h1>$type OUTPUT</h1>";
     runCmd($type, $cmd);
   }
 }
@@ -114,6 +118,7 @@ function getLogContent() {
   if (isset($_GET['link'])) {
     $link = $_GET['link'];
     $contents = file_get_contents("./logs/$link");
+    echo "<h1>LOG CONTENTS</h1>";
     echo "<pre>$contents</pre>";
   }
 }

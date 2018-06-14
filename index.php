@@ -8,7 +8,6 @@
     <link rel="icon" href="img/nodes.png" type="image/png">
   </head>
   <body>
-
     <div class="row">
 
       <div class="column left">
@@ -70,7 +69,7 @@
 	</form>
 
 	<h1>TRACEROUTE</h1>
-	<form method="post"">
+	<form method="post">
 	  <input name="type" type="hidden" value="traceroute"/>
 
 	  <label for="target">Target:</label>
@@ -84,15 +83,6 @@
       </div>
 
       <div class="column right">
-	<h1>RESULT</h1>
-	<?php getResults() ?>
-      </div>
-
-    </div>
-
-    <div class="row">
-
-      <div class="column left">
 	<h1>LOGS</h1>
 	<table>
 	  <tr>
@@ -100,14 +90,10 @@
 	  </tr>
 	</table>
 	<p><a href="logs/">Show all logs...</a></p>
-      </div>
-
-      <div class="column right">
-	<h1>LOG VIEWER</h1>
+	<?php getResults() ?>
 	<?php getLogContent() ?>
       </div>
 
     </div>
-
   </body>
 </html>
