@@ -41,7 +41,7 @@
 	<form method="post">
 	  <input name="type" type="hidden" value="nslookup"/>
 	  <label title="Hostname or IP Address" for="target">Target:</label>
-	  <input id="target" name="target" type="text" maxlength="255" value="8.8.8.8"/><br>
+	  <input id="target" name="target" type="text" maxlength="255" value="example.com"/><br>
 	  <label for="params">Parameters:</label>
 	  <input id="params" name="params" type="text" maxlength="255" value=""/><br>
 	  <input type="submit" name="cheat" value="Cheatsheet"/>

@@ -1,22 +1,37 @@
-* {
+body {
+  background: #eee;
   font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
 }
 
-html, body {
-  height: 100%;
-  margin: 0px;
-  background: #eee;
-  padding-left: 0px;
-  padding-bottom: 30px;
+.row {
+  overflow: hidden;
+  padding: 25px 25px 25px 100px;
+  clear: both;
+}
+
+.column {
+  float: left;
+}
+
+.left {
+  width: 400px;
+}
+
+.right {
+  width: auto;
 }
 
 h1, h2 {
-  padding-top: 30px;
   text-transform: uppercase;
 }
 
 pre {
   font-family: Monospace;
+}
+
+form {
+  padding-bottom: 25px;
 }
 
 label {
@@ -50,22 +65,4 @@ input[type=submit], button {
   cursor:pointer;
   -webkit-border-radius: 5px;
   border-radius: 5px;
-}
-
-.row {
-  padding-left: 100px;
-  padding-right: 100px;
-  clear: both;
-}
-
-.column {
-  float: left;
-}
-
-.left {
-  width: 400px;
-}
-
-.right {
-  width: auto;
 }
