@@ -15,11 +15,13 @@ body {
 }
 
 .left {
-  width: 400px;
+  width: 300px;
 }
 
 .right {
-  width: auto;
+  width: 40em;
+  overflow-x: auto;
+  white-space: nowrap;
 }
 
 h1, h2 {
