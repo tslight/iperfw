@@ -6,7 +6,7 @@ body {
 
 .row {
   overflow: hidden;
-  padding: 25px 25px 25px 100px;
+  padding: 0px 25px 55px 100px;
   clear: both;
 }
 
@@ -25,15 +25,12 @@ body {
 }
 
 h1, h2 {
+  padding-top: 25px;
   text-transform: uppercase;
 }
 
 pre {
   font-family: Monospace;
-}
-
-form {
-  padding-bottom: 25px;
 }
 
 label {
