@@ -1,11 +1,11 @@
-<?php require 'functions.php' ?>
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/nodes.png">
+    <?php require 'functions.php' ?>
     <title>NET UTILS</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="icon" href="img/nodes.png" type="image/png">
+    <meta charset="utf-8">
   </head>
   <body>
     <div class="row">

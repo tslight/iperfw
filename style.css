@@ -65,6 +65,6 @@ input[type=submit], button {
   margin-top: 1em;
   border:0 none;
   cursor:pointer;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
 }

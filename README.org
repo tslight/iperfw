@@ -3,11 +3,26 @@
 
 A web based front end to a few essential network testing tools, written in PHP.
 
+It can run iperf, iperf3, nslookup, ping and traceroute tests. A working set of
+parameters are pre-filled, so a lot of the time all you need to do is press the
+run button and wait for the page to reload.
+
+If you want to learn more about the tools and what parameters are available
+click on the cheatsheet or manual buttons
+
+The cheatsheet button gives a brief overview of available parameters and what
+they do, on the same page. The manual button opens a new tab with the tool's
+manual page.
+
+The latest 10 logs are displayed below allowing you to view or download previous
+tests.
+
 Tested on Ubuntu 18.04 running Apache 2.4 & PHP 7.2 and on a default MAMP
 install.
 
-iperf, iperf3, ping & traceroute need to be installed in a $PATH accessible to
-the apache user (www-data on Ubuntu), on the server, for the tool to work.
+iperf, iperf3, nslookup, ping & traceroute need to be installed in a $PATH
+accessible to the apache user (www-data on Ubuntu), on the server, for the tool
+to work.
 
 #+CAPTION: Screenshot 1
 #+NAME:fig:scrot 0
@@ -16,3 +31,7 @@ the apache user (www-data on Ubuntu), on the server, for the tool to work.
 #+CAPTION: Screenshot 2
 #+NAME:fig:scrot 1
      [[./img/scrot1.png]]
+
+#+CAPTION: Screenshot 3
+#+NAME:fig:scrot 2
+     [[./img/scrot2.png]]
