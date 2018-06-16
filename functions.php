@@ -24,12 +24,19 @@ function disableOutputBuffering () {
   }
 }
 
+function checkdir ($dir) {
+  if (!is_dir($dir)) {
+    mkdir($dir, 0777, true);
+  }
+}
+
 function runCmd ($type, $cmd) {
   disableOutputBuffering();
 
   $date = date("Y-m-d_H-i-s");
   $timestamp = date("H:i:s d/m/Y");
 
+  checkdir("./logs");
   $log = fopen("logs/$date.$type.log", "w") or die("Unable to open file!");
   $proc = popen("$cmd 2>&1", 'r');
 
