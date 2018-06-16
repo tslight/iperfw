@@ -36,8 +36,9 @@ function runCmd ($type, $cmd) {
   $date = date("Y-m-d_H-i-s");
   $timestamp = date("H:i:s d/m/Y");
 
-  checkdir("./logs");
-  $log = fopen("logs/$date.$type.log", "w") or die("Unable to open file!");
+  $logdir = "./logs";
+  checkdir($logdir);
+  $log = fopen("$logdir/$date.$type.log", "w") or die("Unable to open file!");
   $proc = popen("$cmd 2>&1", 'r');
 
   echo "<pre>";
