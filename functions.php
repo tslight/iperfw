@@ -85,6 +85,13 @@ function getResults () {
     $type = (!empty($_REQUEST['type'])) ? $_REQUEST['type'] : NULL;
 
     switch ($type) {
+      case "host" :
+	$prog    = 'host';
+	$target  = (!empty($_REQUEST['target'])) ? $_REQUEST['target'] : NULL;
+	$params  = (!empty($_REQUEST['params'])) ? $_REQUEST['params'] : NULL;
+	$args    = $params . ' ' . $target;
+	$cmd     = getCmd($prog, $args);
+	break;
       case "iperf" :
 	$version = (!empty($_REQUEST['version'])) ? $_REQUEST['version'] : NULL;
 	$target  = (!empty($_REQUEST['target'])) ? $_REQUEST['target'] : NULL;
@@ -111,6 +118,13 @@ function getResults () {
 	break;
       case "traceroute" :
 	$prog    = 'traceroute';
+	$target  = (!empty($_REQUEST['target'])) ? $_REQUEST['target'] : NULL;
+	$params  = (!empty($_REQUEST['params'])) ? $_REQUEST['params'] : NULL;
+	$args    = $params . ' ' . $target;
+	$cmd     = getCmd($prog, $args);
+	break;
+      case "whois" :
+	$prog    = 'whois';
 	$target  = (!empty($_REQUEST['target'])) ? $_REQUEST['target'] : NULL;
 	$params  = (!empty($_REQUEST['params'])) ? $_REQUEST['params'] : NULL;
 	$args    = $params . ' ' . $target;

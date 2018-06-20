@@ -11,6 +11,18 @@
     <div class="row">
 
       <div class="column left">
+	<h1>HOST</h1>
+	<form method="post">
+	  <input name="type" type="hidden" value="host"/>
+	  <label title="Hostname or IP Address" for="target">Target:</label>
+	  <input id="target" name="target" type="text" maxlength="255" value="example.com"/><br>
+	  <label for="params">Parameters:</label>
+	  <input id="params" name="params" type="text" maxlength="255" value=""/><br>
+	  <input type="submit" name="cheat" value="Cheatsheet"/>
+	  <button onclick="window.open('https://linux.die.net/man/1/host');" type="button">Manual</button>
+	  <input type="submit" name="start" value="Run!"/>
+	</form>
+
 	<h1>IPERF</h1>
 	<form method="post">
 	  <input name="type" type="hidden" value="iperf"/>
@@ -70,6 +82,18 @@
 	  <input id="params" name="params" type="text" maxlength="255" value=""/><br>
 	  <input type="submit" name="cheat" value="Cheatsheet"/>
 	  <button onclick="window.open('https://linux.die.net/man/8/traceroute');" type="button">Manual</button>
+	  <input type="submit" name="start" value="Run!"/>
+	</form>
+
+	<h1>WHOIS</h1>
+	<form method="post">
+	  <input name="type" type="hidden" value="whois"/>
+	  <label title="Hostname or IP Address" for="target">Target:</label>
+	  <input id="target" name="target" type="text" maxlength="255" value="example.com"/><br>
+	  <label for="params">Parameters:</label>
+	  <input id="params" name="params" type="text" maxlength="255" value=""/><br>
+	  <input type="submit" name="cheat" value="Cheatsheet"/>
+	  <button onclick="window.open('https://linux.die.net/man/1/whois');" type="button">Manual</button>
 	  <input type="submit" name="start" value="Run!"/>
 	</form>
       </div>
